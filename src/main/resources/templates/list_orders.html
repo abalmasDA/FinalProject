@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Order List</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>№ Order</th>
+        <th>Customer</th>
+        <th>Status</th>
+    </tr>
+    <tr th:each="item : ${items}">
+        <td><a th:href="@{/order/{id}(id=${item.id})}" th:text="${item.id}"></a></td>
+        <td><a th:href="@{/customer/{fullName}(fullName=${item.customer.fullName})}" th:text="${item.customer.fullName}"></a></td>
+        <td th:text="${item.status}"></td>
+    </tr>
+</table>
+</body>
+</html>
+
+

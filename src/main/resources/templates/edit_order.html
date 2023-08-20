@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit Order</title>
+</head>
+<body>
+<form th:action="@{/update_order/{id}(id=${item.id})}" method="post">
+  <label for="status">New Status:</label>
+  <select id="status" name="status">
+    <option value="On hold">On hold</option>
+    <option value="In progress">In progress</option>
+    <option value="Completed">Completed</option>
+  </select>
+  <button type="submit">Update</button>
+</form>
+</body>
+</html>

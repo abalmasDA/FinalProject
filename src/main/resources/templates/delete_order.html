@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Delete Item</title>
+</head>
+<body>
+<th:block th:if="${item != null}">
+  <form th:action="@{/delete_order/{id}(id=${item.id})}" method="post">
+    <input type="hidden" th:name="id" th:value="${item.id}">
+    <p>Delete this order?</p>
+    <button type="submit">Delete</button>
+  </form>
+</th:block>
+<th:block th:if="${item == null}">
+  <p>Order not found.</p>
+</th:block>
+</body>
+</html>
+

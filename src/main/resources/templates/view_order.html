@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${'Item ' + item.id}">Item</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>№</th>
+        <th>Customer</th>
+        <th>Phone</th>
+        <th>Additional info</th>
+        <th>Status</th>
+        <th>Date</th>
+    </tr>
+    <tr>
+        <td th:text="${item.id}"></td>
+        <td th:text="${item.customer.fullName}"></td>
+        <td th:text="${item.customer.phone}"></td>
+        <td th:text="${item.details.additionalInfo}"></td>
+        <td th:text="${item.details.status}"></td>
+        <td th:text="${item.details.date}"></td>
+    </tr>
+</table>
+</body>
+</html>

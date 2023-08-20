@@ -1,0 +1,23 @@
+<form action="#" th:action="@{/create_order}" method="post">
+    <label>Customer:</label>
+    <select name="customerId">
+        <option th:each="customer : ${customers}" th:value="${customer.id}" th:text="${customer.fullName}"></option>
+    </select><br>
+
+    <label>Status:</label>
+    <select name="status">
+        <option value="On hold">On hold</option>
+        <option value="In progress">In progress</option>
+        <option value="Completed">Completed</option>
+    </select><br>
+
+    <label>Additional Info:</label>
+    <input type="text" name="additionalInfo"><br>
+
+
+    <input type="submit" value="Create">
+</form>
+
+<a href="/create_customer">Create Customer</a>
+
+
